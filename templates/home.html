@@ -1,0 +1,38 @@
+<div layout="column"   >
+  <div flex layout="row">
+      <md-toolbar md-scroll-shrink>
+        Easy Splitter
+      </md-toolbar>
+  </div>
+  <div flex layout="row" layout-padding >
+    <div flex layout-padding >
+        <md-toolbar class="md-warn" md-scroll-shrink>
+            Add People
+        </md-toolbar>
+       <md-card layout="row">
+        <md-card-title flex="20">
+          <md-card-title-text >
+            <span >Card with image</span>
+          </md-card-title-text>
+          
+        </md-card-title>
+           <md-card-content flex="70" layout="row" layout-align="start center" class="md-heading">
+               <md-chips ng-model="roFruitNames" readonly="readonly">
+                  <md-chip-template>
+                    <strong>{{$chip}}</strong>
+                    <em>(fruit)</em>
+                  </md-chip-template>
+                </md-chips>
+          </md-card-content>
+        <md-card-actions flex="10" layout="row" layout-align="end center">
+          <md-button>Select</md-button>
+         
+        </md-card-actions>
+      </md-card>
+    </div>
+   
+  </div>
+
+</div>
+
+

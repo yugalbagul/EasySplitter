@@ -1,0 +1,26 @@
+<div layout="column"   >
+  <div flex layout="row">
+      <md-toolbar md-scroll-shrink>
+        Easy Splitter
+      </md-toolbar>
+  </div>
+    <div flex>
+            <form name="addPeopleForm">
+                <div layout="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Dish Name</label>
+                <input ng-model="dish.dishName">
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Menu Price</label>
+                <input type="number" ng-model="dish.menuPrice">
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Total Count</label>
+                <input type="number" ng-model="dish.totalCount">
+              </md-input-container>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="saveDish()">Add</md-button>
+            </form>
+        </div>
+</div>

@@ -1,0 +1,22 @@
+<div layout="column"   >
+  <div flex layout="row">
+      <md-toolbar md-scroll-shrink>
+        Easy Splitter
+      </md-toolbar>
+  </div>
+    <div flex>
+             <form name="addPeopleForm">
+                <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>First name</label>
+                <input ng-model="person.firstName">
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Last Name</label>
+                <input ng-model="person.lastName">
+              </md-input-container>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="savePerson()">Add</md-button>
+            </form>
+        </div>
+</div>

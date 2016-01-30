@@ -1,0 +1,89 @@
+<div layout="column"   >
+  <div flex layout="row">
+      <md-toolbar md-scroll-shrink>
+        Easy Splitter
+      </md-toolbar>
+  </div>
+  <div flex layout="row" layout-padding >
+    <div flex="75" layout-padding >
+        <md-toolbar>
+      <div class="md-toolbar-tools">
+        
+        <h2>
+          <span>Dishes</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More" ng-click="addNewDish($event)">
+          Add
+        </md-button>
+        
+      </div>
+    </md-toolbar>
+        
+        <div ng-repeat="dish in allDishes" ng-init="dishId = $index" >
+       <md-card layout="row"  >
+        <md-card-title flex="20">
+          <md-card-title-text >
+            <span >{{dish.dishName}}</span>
+          </md-card-title-text>
+          
+        </md-card-title>
+           <md-card-content flex="70" layout="row" layout-align="start center" class="md-heading">
+               <div layout="row">
+                  <div layout="column" flex max-width="10%" ng-repeat="person in dish.hadBy" class="dishPerson">
+                     <md-button class="md-raised md-primary" ng-click="deleteFromDish(person,$index,dishId)">{{person.firstName}}</md-button>
+                     <div layout="row" flex-offset="20">
+                        <ng-md-icon  icon="remove_circle_outline" style="fill: #f00" ng-click="substractDishCount(person,$index,dishId)">
+                        </ng-md-icon><span style="padding-top: 3px;">{{person.count}}</span>
+                        <ng-md-icon icon="add_circle_outline" style="fill:#059A19" ng-click="addDishCount(person,$index,dishId)"> </ng-md-icon>
+                     </div>
+                      <div flex-offset="35">
+                          {{person.dishAmount}}
+                      </div>
+                   </div>
+               </div>
+               
+          </md-card-content>
+        <md-card-actions flex="10" layout="row" layout-align="end center">
+          <md-button ng-click="selectDish($index)">Select</md-button>
+         
+        </md-card-actions>
+      </md-card>
+    </div>
+    </div>
+
+
+    <div flex="25" layout="column" layout-padding>
+        <md-toolbar>
+      <div class="md-toolbar-tools">
+        
+        <h2>
+          <span>Perople</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More" ng-click="addPerson($event)">
+          Add
+        </md-button>
+        
+      </div>
+    </md-toolbar>
+
+        <div layout="column" >
+            <div layout="row" flex ng-repeat="person in people">
+                <div flex>
+                    <md-button class="md-raised md-primary" ng-click="addToDish(person,$index)">{{person.firstName}}</md-button>
+                </div>
+                <div flex style="padding-top: 15px;    padding-left: 15px">
+                    <span> {{person.totalAmount}}</span>
+                
+                </div>
+            </div>
+        </div>
+         
+
+    </div>
+  </div>
+
+</div>
+
+
