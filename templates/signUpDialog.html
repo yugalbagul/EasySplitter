@@ -1,0 +1,22 @@
+<div layout="column"   >
+  <div flex layout="row">
+      <md-toolbar md-scroll-shrink>
+        Easy Splitter
+      </md-toolbar>
+  </div>
+    <div flex>
+             <form name="addPeopleForm">
+                <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>UserName</label>
+                <input ng-model="user.email">
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input ng-model="user.password" type="password">
+              </md-input-container>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="signup()">Sign Up</md-button>
+            </form>
+        </div>
+</div>

@@ -4,7 +4,7 @@
         Easy Splitter
       </md-toolbar>
   </div>
-  <div flex layout="row" layout-padding >
+  <div flex layout="row" layout-padding ng-show="showSplitter">
     <div flex="75" layout-padding >
         <md-toolbar>
       <div class="md-toolbar-tools">
@@ -23,8 +23,9 @@
         <div ng-repeat="dish in allDishes" ng-init="dishId = $index" >
        <md-card layout="row"  >
         <md-card-title flex="20">
-          <md-card-title-text >
-            <span >{{dish.dishName}}</span>
+          <md-card-title-text layout="column">
+            <span flex >{{dish.dishName}}</span>
+            <span flex>{{dish.totalPrice}}</span>
           </md-card-title-text>
           
         </md-card-title>
@@ -64,6 +65,9 @@
         <md-button class="md-raised" aria-label="Learn More" ng-click="addPerson($event)">
           Add
         </md-button>
+          <md-button class="md-raised" aria-label="Learn More" ng-click="createSummary()">
+          Summary
+        </md-button>
         
       </div>
     </md-toolbar>
@@ -78,11 +82,21 @@
                 
                 </div>
             </div>
+            <div flex>
+                Total : {{totalBill}}
+            </div>
         </div>
          
 
     </div>
   </div>
+    <div ng-show="!showSplitter">
+        <div flex ="50">
+        
+        </div>
+    
+    
+    </div>
 
 </div>
 
